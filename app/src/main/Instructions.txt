@@ -1,0 +1,35 @@
+For the purpose of this assignment, I'd like to have you to write a simple Android App. 
+
+===================================================
+
+This app would have two pages:
+
+- Patients list
+- Patients profile page
+
+-------------------------------------
+
+Page1: 
+
+When the app launches, you need to send a HTTP GET request to
+
+https://api.myjson.com/bins/uj26j
+
+The response should contain a list of patients with their names and ID in a simple JSON array. Once you fetched this list, populate the patients name on a listview.
+It's up to you how you want to layout the page element. In case if something is wrong with the server, host "patients.json" on your own and fetch it from the device.
+
+-------------------------------------
+
+Page2:
+
+Page2 is shown when the device user selects a patient from the page1's list. This page should contain the name and the ID of the patients.
+Also, it should have a button that turns on the camera to capture a profile picture for the patients. The picture taken should be displayed on this page as well. 
+
+
+-------------------------------------
+
+Design and structure the app the best as you can and feel free to use any framework or library that you are comfortable with. Don't spend too long on making the app look nice, we have a in-house designer to take care of that. 
+
+Please upload the source code to GitHub (you can make a public repo, make sure I have no problem rebuilding the app from the source code) and send me the link to it by end of day Tuesday, 17 April 2018. Send me a copy of the apk file too just in case.
+
+Note: It is completely fine if you don't finish the exercise by the deadline. However, make sure you design and structure the project well according to industrial standard/convention.
