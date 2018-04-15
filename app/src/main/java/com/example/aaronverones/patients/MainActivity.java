@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,13 +47,15 @@ public class MainActivity extends AppCompatActivity {
         });
         mQueue.add(request);
     }
+
     private void setUpView(JSONArray jsonArray) {
         ArrayList<JSONObject> listItems = getArrayListFromJSONArray(jsonArray);
-        ListView listV = (ListView)findViewById(R.id.patientsList);
+        ListView listV = findViewById(R.id.patientsList);
         ListAdapter adapter = new PatientsListAdapter(this, R.layout.list_layout, R.id.pid, listItems);
         listV.setAdapter(adapter);
     }
-    private JSONArray getJSonData(String fileName){
+
+    private JSONArray getJSonData(String fileName) {
         JSONArray jsonArray = null;
         try {
             InputStream is = getResources().getAssets().open(fileName);
@@ -65,15 +65,14 @@ public class MainActivity extends AppCompatActivity {
             is.close();
             String json = new String(data, "UTF-8");
             jsonArray = new JSONArray(json);
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } catch (JSONException je) {
-            je.printStackTrace();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
         }
         return jsonArray;
     }
+
     private ArrayList<JSONObject> getArrayListFromJSONArray(JSONArray jsonArray){
-        ArrayList<JSONObject> aList = new ArrayList<JSONObject>();
+        ArrayList<JSONObject> aList = new ArrayList<>();
         try {
             if (jsonArray != null) {
                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -83,6 +82,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException je) {
             je.printStackTrace();
         }
-        return  aList;
+        return aList;
     }
 }

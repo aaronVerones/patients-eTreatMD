@@ -16,7 +16,6 @@ public class PatientsListAdapter extends ArrayAdapter<JSONObject>{
     private int vg;
     private ArrayList<JSONObject> list;
     private Context context;
-
     public static final String EXTRA_ID = "com.example.aaronverones.patients.EXTRA_ID";
     public static final String EXTRA_NAME = "com.example.aaronverones.patients.EXTRA_NAME";
 
@@ -26,6 +25,7 @@ public class PatientsListAdapter extends ArrayAdapter<JSONObject>{
         this.vg = vg;
         this.list = list;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -48,6 +48,7 @@ public class PatientsListAdapter extends ArrayAdapter<JSONObject>{
         }
         return itemView;
     }
+
     private void openPatientProfile(String id, String name) {
         Intent intent = new Intent(context, PatientProfileActivity.class);
         intent.putExtra(EXTRA_ID, id);

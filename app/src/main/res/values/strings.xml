@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Patients</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="cannot_open_camera">Cannot take a photo without permission</string>
 </resources>
